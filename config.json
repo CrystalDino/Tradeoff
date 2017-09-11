@@ -1,0 +1,4 @@
+{
+    "dsn":"dba_btc:btc@tcp(127.0.0.1:3306)/btc?charset=utf8&loc=Asia%2FShanghai",
+    "addr":"127.0.0.1:8081"
+}
