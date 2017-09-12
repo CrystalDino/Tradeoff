@@ -29,5 +29,6 @@ func WebRun() (err error) {
 	if WebEngine == nil {
 		return errors.New("web engine not running")
 	}
+
 	return WebEngine.Run(webAddr)
 }

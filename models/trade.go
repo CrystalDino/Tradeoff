@@ -3,8 +3,6 @@ package models
 import (
 	"Tradeoff/core"
 	"log"
-
-	"github.com/google/uuid"
 )
 
 // type Trade struct {
@@ -68,11 +66,5 @@ func (ts *TradeSale) TableName() string {
 	return "sale"
 }
 
-func Show() {
-	uu := uuid.New()
-	tb := &TradeBuy{Tid: uu.String()}
-	core.DBEngine.InsertOne(tb)
-	uu = uuid.New()
-	ts := &TradeSale{Tid: uu.String()}
-	core.DBEngine.InsertOne(ts)
+func Run() {
 }

@@ -1,6 +1,7 @@
 package main
 
 import (
+	"Tradeoff/controller"
 	"Tradeoff/core"
 	"Tradeoff/models"
 )
@@ -10,6 +11,7 @@ func main() {
 	if err := core.DBLinkTest(); err != nil {
 		println("db ping error,", err)
 	}
-	models.Show()
+	models.Run()
+	controller.Run()
 	core.WebRun()
 }
