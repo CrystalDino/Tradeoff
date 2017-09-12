@@ -17,7 +17,9 @@ type TradeConfig struct {
 	MaxBuy       float64 `xorm:"decimal(20,8) notnull default(0.0)"`
 	MinSale      float64 `xorm:"decimal(20,8) notnull default(0.0)"`
 	MaxSale      float64 `xorm:"decimal(20,8) notnull default(0.0)"`
-	PercentCycle int64   `xorm:"notnull defualt(0)"` //hour
+	Brate        float64 `xorm:"decimal(10,5) notnull default(0.0)"` //buy rate
+	Srate        float64 `xorm:"decimal(10,5) notnull default(0.0)"` //sale rate
+	PercentCycle int64   `xorm:"notnull defualt(0)"`                 //hour
 	PercentLimit float64 `xorm:"decimal(10,5) notnull default(0.0)"`
 	FirstPrice   float64 `xorm:"decimal(20,8) notnull default(0.0)"`
 	CTime        int64   `xorm:"created notnull"`
