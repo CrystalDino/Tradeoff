@@ -24,10 +24,6 @@ func init() {
 		log.Fatalln("db engine init error,", err)
 		return
 	}
-	if err = SyncModels(); err != nil {
-		log.Fatalln("db engine sync models error,", err)
-		return
-	}
 }
 
 func DBLinkTest() (err error) {
@@ -37,18 +33,6 @@ func DBLinkTest() (err error) {
 	return DBEngine.Ping()
 }
 
-func SyncModels() (err error) {
-	// if err = engine.Sync2(&Coin{}); err != nil {
-	// 	return
-	// }
-	// if err = engine.Sync2(&Buy{}); err != nil {
-	// 	return
-	// }
-	// if err = engine.Sync2(&Sale{}); err != nil {
-	// 	return
-	// }
-	// if err = engine.Sync2(&Bargain{}); err != nil {
-	// 	return
-	// }
-	return nil
+func SyncModels(beans interface{}) (err error) {
+	return DBEngine.Sync2(beans)
 }
